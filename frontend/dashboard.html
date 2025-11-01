@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dashboard - Gestão de Equipamentos</title>
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+   <body>
+      <div class="dashboard">
+         <header class="header">
+            <h1>Sistema de Gestão de Equipamentos</h1>
+            <div class="user-info">
+               <span id="userName"></span>
+               <button id="logoutBtn" class="btn btn-secondary">Sair</button>
+            </div>
+         </header>
+
+         <main class="main-content">
+            <div class="actions-bar">
+               <h2>Equipamentos</h2>
+               <button id="addEquipamentoBtn" class="btn btn-primary">+ Adicionar Equipamento</button>
+            </div>
+
+            <div id="message" class="message hidden"></div>
+
+            <div class="equipamentos-grid" id="equipamentosGrid">
+               <!-- Equipamentos serão carregados aqui -->
+            </div>
+         </main>
+      </div>
+
+      <!-- Modal Adicionar/Editar Equipamento -->
+      <div id="equipamentoModal" class="modal hidden">
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Adicionar Equipamento</h2>
+            <form id="equipamentoForm">
+               <input type="hidden" id="equipamentoId" />
+
+               <div class="form-group">
+                  <label for="nome">Nome*:</label>
+                  <input type="text" id="nome" name="nome" required />
+               </div>
+
+               <div class="form-group">
+                  <label for="descricao">Descrição:</label>
+                  <textarea id="descricao" name="descricao" rows="3"></textarea>
+               </div>
+
+               <div class="form-group">
+                  <label for="status">Status*:</label>
+                  <select id="status" name="status" required>
+                     <option value="Disponível">Disponível</option>
+                     <option value="Em uso">Em uso</option>
+                     <option value="Em manutenção">Em manutenção</option>
+                  </select>
+               </div>
+
+               <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <!-- Modal Detalhes do Equipamento -->
+      <div id="detalhesModal" class="modal hidden">
+         <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Detalhes do Equipamento</h2>
+
+            <div id="equipamentoDetalhes">
+               <!-- Detalhes serão carregados aqui -->
+            </div>
+
+            <h3>Histórico de Manutenções</h3>
+            <button id="addManutencaoBtn" class="btn btn-primary">+ Registrar Manutenção</button>
+
+            <div id="manutencoesLista" class="manutencoes-lista">
+               <!-- Manutenções serão carregadas aqui -->
+            </div>
+         </div>
+      </div>
+
+      <!-- Modal Registrar Manutenção -->
+      <div id="manutencaoModal" class="modal hidden">
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registrar Manutenção</h2>
+            <form id="manutencaoForm">
+               <input type="hidden" id="manutencaoEquipamentoId" />
+
+               <div class="form-group">
+                  <label for="dataManutencao">Data:</label>
+                  <input type="datetime-local" id="dataManutencao" name="data" required />
+               </div>
+
+               <div class="form-group">
+                  <label for="descricaoManutencao">Descrição*:</label>
+                  <textarea id="descricaoManutencao" name="descricao" rows="3" required></textarea>
+               </div>
+
+               <div class="form-group">
+                  <label for="statusManutencao">Status*:</label>
+                  <select id="statusManutencao" name="status" required>
+                     <option value="Pendente">Pendente</option>
+                     <option value="Concluída">Concluída</option>
+                  </select>
+               </div>
+
+               <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" id="cancelManutencaoBtn">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <script src="js/config.js"></script>
+      <script src="js/auth.js"></script>
+      <script src="js/dashboard.js"></script>
+   </body>
+</html>
