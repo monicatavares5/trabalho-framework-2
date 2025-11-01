@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - SERVER_PORT=3000
+      - JWT_SECRET=monica_12345
+    volumes:
+      - ./backend/database.sqlite:/app/database.sqlite
+    networks:
+      - network-legal
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - network-legal
+    restart: unless-stopped
+
+networks:
+  network-legal:
+    driver: bridge
+
+volumes:
+  database:
