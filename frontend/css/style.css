@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #6379ba 0%, #1f91e9 100%);
     min-height: 100vh;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .login-box h1 {
-    color: #667eea;
+    color: #3a9d2d;
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
@@ -68,7 +68,7 @@ body {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #3a9d2d;
 }
 
 .btn {
@@ -82,13 +82,13 @@ body {
 }
 
 .btn-primary {
-    background: #667eea;
+    background: #3a9d2d;
     color: white;
     width: 100%;
 }
 
 .btn-primary:hover {
-    background: #5568d3;
+    background: #334fa5;
 }
 
 .btn-secondary {
@@ -121,7 +121,7 @@ body {
 }
 
 .register-link a {
-    color: #667eea;
+    color: #3a9d2d;
     text-decoration: none;
     font-weight: 600;
 }
@@ -168,7 +168,7 @@ body {
 }
 
 .header h1 {
-    color: #667eea;
+    color: #3a9d2d;
     font-size: 24px;
 }
 
@@ -354,7 +354,7 @@ body {
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #3a9d2d;
 }
 
 .manutencao-item p {
